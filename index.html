@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>country — About to start counting</title>
+<title>country — The countdown has started</title>
 <meta name="description" content="Every day you spend somewhere counts. Soon you'll know exactly where you stand. Join the waitlist.">
-<meta property="og:title" content="country — About to start counting">
+<meta property="og:title" content="country — The countdown has started">
 <meta property="og:description" content="Every day you spend somewhere counts. Soon you'll know exactly where you stand.">
 <meta name="theme-color" content="#E6F2FD">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23264E43'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23CFE8FF' stroke-width='6' stroke-dasharray='90 200' stroke-linecap='round' transform='rotate(-90 32 32)'/%3E%3C/svg%3E">
@@ -50,7 +50,7 @@ input::placeholder{color:#6B7C76}
 @media (pointer:fine){.cc{display:block}.root,.root a,.root button,.root .mapsvg{cursor:none!important}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .wrap{max-width:1320px;width:100%;margin:0 auto;padding-left:28px;padding-right:28px}
-@media (max-width:600px){.wrap{padding-left:16px;padding-right:16px}.hint{display:none!important}.orbit{inset:-30px!important}}
+@media (max-width:600px){.wrap{padding-left:16px;padding-right:16px}.hint{display:none!important}.orbit{inset:-30px!important}#mapbox{width:300vw!important}#act{display:none!important}.mapwrap{align-items:flex-start!important;padding-top:70px!important}.wl{flex-wrap:nowrap!important;width:min(380px,100%)!important;padding:6px!important;border-radius:18px!important}.wl input{min-height:46px!important;padding:0 12px!important;font-size:15px!important}.wl button{min-height:46px!important;padding:0 16px!important;font-size:14.5px!important;border-radius:13px!important;white-space:nowrap}.wl button svg{display:none}}
 </style>
 </head>
 <body>
@@ -69,7 +69,7 @@ input::placeholder{color:#6B7C76}
 </div>
 
 <!-- dot map -->
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+<div class="mapwrap" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
 <div id="mapbox" style="position:relative;width:min(1560px,135vw);aspect-ratio:960/440;flex-shrink:0">
 <svg id="map" class="mapsvg" viewBox="0 0 960 440" role="img" aria-label="World map. Click anywhere to set the clock to that time zone." style="position:absolute;inset:0;width:100%;height:100%;display:block">
 <defs>
@@ -123,25 +123,23 @@ input::placeholder{color:#6B7C76}
 </div>
 
 <div class="fadeup mono" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:7px 14px;font-size:11.5px;letter-spacing:.16em;color:#264E43;box-shadow:0 6px 16px rgba(38,78,67,.10)">
-<span id="digital" style="font-variant-numeric:tabular-nums;font-weight:500">--:--:--</span>
-<span style="color:#A9CDEE">·</span>
-<span id="zonelbl">DUBAI UTC+4</span>
+<span id="zonelbl" style="font-weight:500">UAE</span>
 <span style="color:#A9CDEE">·</span>
 <span><b id="scr" style="font-weight:500;font-variant-numeric:tabular-nums">7</b> <span id="msgtxt">DAYS TO YOUR NEXT TRIP</span></span>
 </div>
 
 <h1 class="bric" style="margin:22px 0 0;font-weight:800;font-size:clamp(42px,6.4vw,96px);line-height:.98;letter-spacing:-.045em;color:#1C2B26">
-<span class="word" style="animation-delay:.1s">About</span> <span class="word" style="animation-delay:.2s">to</span> <span class="word" style="animation-delay:.3s">start</span> <span class="word" style="animation-delay:.5s;color:#6D9488;font-weight:300">counting</span><span id="ell" class="word" style="animation-delay:.7s;color:#6D9488;font-weight:300;min-width:1.1em;text-align:left"></span>
+<span class="word" style="animation-delay:.1s">The</span> <span class="word" style="animation-delay:.2s">countdown</span> <span class="word" style="animation-delay:.3s">has</span> <span class="word" style="animation-delay:.5s;color:#6D9488;font-weight:300">started</span><span id="ell" class="word" style="animation-delay:.7s;color:#6D9488;font-weight:300;min-width:1.1em;text-align:left"></span>
 </h1>
-<p class="fadeup" style="animation-delay:.9s;margin:16px 0 0;max-width:520px;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:#3E4F49">Every day you spend somewhere counts. Soon you'll know exactly where you stand.</p>
+<p class="fadeup" style="animation-delay:.9s;margin:16px 0 0;max-width:520px;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:#3E4F49">Ready to start counting your countries? Be&nbsp;the&nbsp;first.</p>
 
-<form id="form" class="fadeup" style="animation-delay:1.1s;pointer-events:auto;margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:min(560px,100%);background:#fff;border-radius:22px;padding:8px;box-shadow:0 16px 40px rgba(38,78,67,.16)">
+<form id="form" class="fadeup wl" style="animation-delay:1.1s;pointer-events:auto;margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:min(560px,100%);background:#fff;border-radius:22px;padding:8px;box-shadow:0 16px 40px rgba(38,78,67,.16)">
 <label for="email" class="sr">Email address</label>
 <input id="email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" style="flex:1 1 220px;min-width:0;min-height:52px;border:none;background:transparent;color:#1C2B26;border-radius:16px;padding:0 16px;font-family:'Inter',sans-serif;font-size:16px">
 <button type="submit" class="btnj" style="min-height:52px;background:#264E43;color:#fff;border:none;border-radius:16px;padding:0 26px;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:10px">Join the waitlist
 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
 </form>
-<div id="msg" aria-live="polite" style="margin-top:12px;min-height:22px;font-size:14.5px;color:#4A5A54">Be first to know. No spam, just day one.</div>
+<div id="msg" aria-live="polite" style="margin-top:12px;min-height:22px;font-size:14.5px;color:#4A5A54">No spam. Just an easier life.</div>
 </main>
 
 <footer style="position:relative;z-index:5">
@@ -223,8 +221,7 @@ var WAITLIST_ENDPOINT = "";
   function render(){
     var c = clockAt(zone.off);
     setHands(c);
-    $('digital').textContent = c.digital;
-    $('zonelbl').textContent = zone.name + ' ' + utcLabel(zone.off);
+    $('zonelbl').textContent = ({ DXB: 'UAE', LON: 'UNITED KINGDOM', MAD: 'SPAIN', LIS: 'PORTUGAL', NYC: 'USA', MEX: 'MEXICO', SAO: 'BRAZIL', CPT: 'SOUTH AFRICA', SIN: 'SINGAPORE', DPS: 'INDONESIA', TYO: 'JAPAN', SYD: 'AUSTRALIA', BKK: 'THAILAND', PAR: 'FRANCE' })[zone.code] || zone.name;
     $('clk').setAttribute('aria-label', 'Clock showing ' + c.digital + ' in ' + zone.name);
     $('you').style.left = pct(zone.x, 960); $('you').style.top = pct(zone.y, 440);
     var a = cities[cityIdx], ac = clockAt(tzOffsetH(a.tz));
