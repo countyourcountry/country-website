@@ -161,7 +161,7 @@ TAP THE MAP TO SET YOUR CLOCK · HOVER THE CLOCK</span>
    Brevo, Google Apps Script...). It receives a POST with "email".
    Left empty, the form only shows the confirmation message.
    ============================================================ */
-var WAITLIST_ENDPOINT = "";
+var WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbyiG1kyIyfc6J-P4uI-f_F0OLQol_vyKjzu0VeZNeRDefzidL_Zt23xV2wdp1pwSnE/exec";
 
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -293,10 +293,15 @@ var WAITLIST_ENDPOINT = "";
     if (email.indexOf('@') < 1) return;
     var ok = function(){ msg.style.color = '#264E43'; msg.style.fontWeight = '600'; msg.textContent = "You're in. We'll tell you the moment the count starts."; $('email').value = ''; };
     if (!WAITLIST_ENDPOINT){ ok(); return; }
-    var fd = new FormData(); fd.append('email', email);
-    fetch(WAITLIST_ENDPOINT, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-      .then(function(r){ if (r.ok) ok(); else throw 0; })
-      .catch(function(){ msg.style.color = '#1C2B26'; msg.textContent = 'Something went wrong. Write to us at info@countyourcountry.com'; });
+    var btn = $('form').querySelector('button');
+    btn.disabled = true; btn.style.opacity = '.7';
+    var body = new URLSearchParams({ email: email, country: $('zonelbl').textContent || '' });
+    // Google Apps Script doesn't allow reading the reply from another site, so we send "no-cors":
+    // the request still arrives, and a network failure still lands in catch().
+    fetch(WAITLIST_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+      .then(function(){ ok(); })
+      .catch(function(){ msg.style.color = '#1C2B26'; msg.textContent = 'Something went wrong. Write to us at info@countyourcountry.com'; })
+      .then(function(){ btn.disabled = false; btn.style.opacity = ''; });
   });
 })();
 </script>
